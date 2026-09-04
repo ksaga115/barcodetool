@@ -1,0 +1,11 @@
+# OS / editor / local tooling
+.vs/
+*.user
+.claude/
+Thumbs.db
+.DS_Store
+*.log
+
+# 手元のバックアップ（履歴は git が持つので版管理しない）
+*.backup-*.html
+*.bak

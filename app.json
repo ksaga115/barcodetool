@@ -1,0 +1,7 @@
+{
+  "name": "BarcodeTool",
+  "version": "5.0.0",
+  "launch": "BarcodeTool.html",
+  "kind": "web",
+  "description": "バーコード/QRコードの生成・読み取りツール（単一HTML・外部通信なし）＋読み取ったコードからキャラクターを生成して集める「コードバトル」"
+}
