@@ -1,0 +1,17 @@
+{
+  "appId": "com.kokisagawa.barcodetool",
+  "appName": "バーコードツール",
+  "webDir": "www",
+  "backgroundColor": "#1e1e2e",
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#1e1e2e",
+    "scrollEnabled": false,
+    "limitsNavigationsToAppBoundDomains": false
+  },
+  "plugins": {
+    "Keyboard": {
+      "resize": "none"
+    }
+  }
+}

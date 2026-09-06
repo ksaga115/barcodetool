@@ -1,0 +1,17 @@
+<!--
+  ios/App/App/Info.plist の <dict> ... </dict> の中にこれらのキーを追加する。
+  `npm run patch:ios`（scripts/apply-ios-patch.mjs）が未挿入のものだけ自動で挿入する。
+  手で入れる場合は下記をそのまま貼り付け。
+-->
+
+<key>NSCameraUsageDescription</key>
+<string>バーコード・QRコードをカメラで読み取るために使用します。画像は端末内で処理され、外部に送信されません。</string>
+
+<!-- 標準的な暗号のみ使用（毎回の輸出コンプライアンス質問を省略） -->
+<key>ITSAppUsesNonExemptEncryption</key>
+<false/>
+
+<!-- フォトライブラリへは書き込まない（共有シート経由）。写真から画像を選ぶ導線を足す場合のみ有効化する:
+<key>NSPhotoLibraryUsageDescription</key>
+<string>読み取りたい画像を選ぶために使用します。</string>
+-->

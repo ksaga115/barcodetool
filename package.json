@@ -1,0 +1,34 @@
+{
+  "name": "barcodetool-mobile",
+  "version": "5.0.0",
+  "private": true,
+  "description": "iPhone (Capacitor) wrapper for BarcodeTool.html — barcode/QR generate + read + code-battle game, with a Pro unlock (StoreKit 2).",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-www.mjs",
+    "dist": "node scripts/build-dist.mjs",
+    "domcheck": "node scripts/domcheck.mjs",
+    "sim": "node scripts/sim.mjs",
+    "test": "node scripts/domcheck.mjs && node scripts/sim.mjs",
+    "patch:ios": "node scripts/apply-ios-patch.mjs",
+    "assets": "capacitor-assets generate --assetPath assets --iconBackgroundColor #1e1e2e --iconBackgroundColorDark #1e1e2e --splashBackgroundColor #1e1e2e --splashBackgroundColorDark #1e1e2e",
+    "sync": "npm run build && npx cap sync ios && npm run patch:ios",
+    "ios": "npm run sync && npx cap open ios",
+    "copy": "npm run build && npx cap copy ios"
+  },
+  "dependencies": {
+    "@capacitor/app": "^8.1.1",
+    "@capacitor/core": "^8.5.1",
+    "@capacitor/filesystem": "^8.1.3",
+    "@capacitor/ios": "^8.5.1",
+    "@capacitor/keyboard": "^8.0.5",
+    "@capacitor/preferences": "^8.0.1",
+    "@capacitor/share": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.1",
+    "jsdom": "^30.0.1"
+  }
+}

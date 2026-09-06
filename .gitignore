@@ -9,3 +9,17 @@ Thumbs.db
 # 手元のバックアップ（履歴は git が持つので版管理しない）
 *.backup-*.html
 *.bak
+backups/
+
+# ── Capacitor / iOS ラッパー（生成物は版管理しない）──
+node_modules/
+www/
+ios/
+android/
+.gradle/
+*.iml
+# ネイティブ側へ差し込む原本は native/ と ios-patch/ に置く（これらは追跡する）
+!ios-patch/
+
+# 配布版（BarcodeTool.html のコピーだけ。`npm run dist` でいつでも作り直せる）
+dist/

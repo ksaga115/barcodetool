@@ -1,0 +1,151 @@
+/* native/z-native.css
+   ネイティブ実行時（body.bt-native）のみ効く調整。Web では一切影響しない。 */
+
+/* セーフエリア：ステータスバー / ホームインジケータを避ける */
+body.bt-native header {
+  padding-top: calc(10px + env(safe-area-inset-top));
+}
+body.bt-native {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+body.bt-native #scroll-container,
+body.bt-native #dec-main,
+body.bt-native #game-main,
+body.bt-native #dec-right,
+body.bt-native #game-left,
+body.bt-native #game-right {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* タップ時の青いハイライトを抑制（アプリらしく） */
+body.bt-native * {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS のスクロール慣性を自然に */
+body.bt-native #scroll-container,
+body.bt-native #cb-list,
+body.bt-native #dec-right {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Pro バッジ（ヘッダーに差し込む小ボタン） ── */
+.bt-pro-badge {
+  appearance: none;
+  border: 1px solid var(--surface2, #585b70);
+  background: var(--surface0, #313244);
+  color: var(--blue-light, #89b4fa);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.bt-pro-badge:hover { background: var(--surface1, #45475a); }
+.bt-pro-badge.is-owned {
+  color: var(--green-light, #a6e3a1);
+  border-color: var(--green, #40a02b);
+  cursor: default;
+}
+
+/* ── ペイウォール ── */
+#bt-paywall {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(17, 17, 27, 0.72);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+#bt-paywall.open { display: flex; }
+.bt-pw-card {
+  width: min(420px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: var(--base, #1e1e2e);
+  border: 1px solid var(--surface1, #45475a);
+  border-radius: 16px;
+  padding: 22px 22px 18px;
+  color: var(--text, #cdd6f4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  padding-bottom: max(18px, env(safe-area-inset-bottom));
+}
+.bt-pw-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--blue-light, #89b4fa);
+  margin-bottom: 4px;
+}
+.bt-pw-sub {
+  font-size: 12px;
+  color: var(--subtext, #a6adc8);
+  margin-bottom: 14px;
+}
+.bt-pw-list { list-style: none; margin: 0 0 16px; padding: 0; }
+.bt-pw-list li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 13px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--surface0, #313244);
+}
+.bt-pw-list li::before { content: "✦"; color: var(--blue-light, #89b4fa); }
+.bt-pw-price {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 4px 0 12px;
+}
+.bt-pw-price small { display: block; font-weight: 400; font-size: 11px; color: var(--subtext, #a6adc8); }
+.bt-pw-btn {
+  display: block;
+  width: 100%;
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.bt-pw-btn.primary { background: var(--blue, #1e66f5); color: #fff; }
+.bt-pw-btn.primary:hover { background: var(--blue-hover, #4d88f7); }
+.bt-pw-btn.ghost { background: transparent; color: var(--subtext, #a6adc8); border: 1px solid var(--surface1, #45475a); }
+.bt-pw-legal {
+  margin-top: 14px;
+  font-size: 11px;
+  color: var(--overlay, #6c7086);
+  text-align: center;
+  line-height: 1.7;
+}
+.bt-pw-legal a { color: var(--blue-light, #89b4fa); text-decoration: none; }
+
+/* ── 自前トースト ── */
+#bt-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  transform: translateX(-50%) translateY(20px);
+  z-index: 100000;
+  background: var(--crust, #11111b);
+  color: var(--text, #cdd6f4);
+  border: 1px solid var(--surface1, #45475a);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 13px;
+  max-width: 80vw;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+#bt-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }

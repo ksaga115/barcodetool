@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2732" height="2732" viewBox="0 0 2732 2732">
+  <rect width="2732" height="2732" fill="#1e1e2e"/>
+  <g transform="translate(1074 1160)">
+    <g fill="#cdd6f4">
+      <rect x="0"   y="0" width="30" height="360"/>
+      <rect x="52"  y="0" width="16" height="360"/>
+      <rect x="92"  y="0" width="42" height="360"/>
+      <rect x="158" y="0" width="16" height="360"/>
+      <rect x="198" y="0" width="26" height="360"/>
+    </g>
+    <g transform="translate(300 0)">
+      <rect x="0"   y="0"   width="130" height="130" fill="#89b4fa"/>
+      <rect x="33"  y="33"  width="64"  height="64"  fill="#1e1e2e"/>
+      <rect x="0"   y="230" width="130" height="130" fill="#89b4fa"/>
+      <rect x="33"  y="263" width="64"  height="64"  fill="#1e1e2e"/>
+      <rect x="230" y="0"   width="130" height="130" fill="#89b4fa"/>
+      <rect x="263" y="33"  width="64"  height="64"  fill="#1e1e2e"/>
+      <rect x="250" y="250" width="110" height="110" fill="#a6e3a1"/>
+    </g>
+  </g>
+</svg>

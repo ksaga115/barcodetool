@@ -1,0 +1,36 @@
+{
+  "identifier" : "BARCODETOOL_LOCAL_STOREKIT",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "PRO0000001",
+      "localizations" : [
+        {
+          "description" : "追加フォーマットと全件保存を解放する買い切りアンロック",
+          "displayName" : "バーコードツール Pro",
+          "locale" : "ja_JP"
+        },
+        {
+          "description" : "Unlocks extra symbologies and bulk export. One-time purchase.",
+          "displayName" : "BarcodeTool Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.kokisagawa.barcodetool.pro",
+      "referenceName" : "Pro Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "0",
+    "_developerTeamID" : "0",
+    "_lastSynchronizedDate" : 0
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
